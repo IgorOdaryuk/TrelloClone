@@ -15,6 +15,8 @@
 		A4BF50822A4D9B6A0057F838 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50812A4D9B6A0057F838 /* Board.swift */; };
 		A4BF50852A4DB7AE0057F838 /* Board+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */; };
 		A4BF50882A4DF23F0057F838 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50872A4DF23F0057F838 /* BoardView.swift */; };
+		A4BF508A2A4E0BB30057F838 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50892A4E0BB30057F838 /* BoardListView.swift */; };
+		A4BF508C2A4E203B0057F838 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF508B2A4E203B0057F838 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A4BF50832A4DB6F40057F838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Stub.swift"; sourceTree = "<group>"; };
 		A4BF50872A4DF23F0057F838 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		A4BF50892A4E0BB30057F838 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
+		A4BF508B2A4E203B0057F838 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				A4BF50872A4DF23F0057F838 /* BoardView.swift */,
+				A4BF50892A4E0BB30057F838 /* BoardListView.swift */,
+				A4BF508B2A4E203B0057F838 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 				A4BF50852A4DB7AE0057F838 /* Board+Stub.swift in Sources */,
 				A4BF507E2A4D97B30057F838 /* Card.swift in Sources */,
 				A4BF50822A4D9B6A0057F838 /* Board.swift in Sources */,
+				A4BF508A2A4E0BB30057F838 /* BoardListView.swift in Sources */,
 				A4BF50802A4D99C90057F838 /* BoardList.swift in Sources */,
+				A4BF508C2A4E203B0057F838 /* CardView.swift in Sources */,
 				A4BF506F2A4D94D80057F838 /* TrelloCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
