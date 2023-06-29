@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		A4BF506F2A4D94D80057F838 /* TrelloCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF506E2A4D94D80057F838 /* TrelloCloneApp.swift */; };
-		A4BF50712A4D94D80057F838 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50702A4D94D80057F838 /* ContentView.swift */; };
 		A4BF50732A4D94D90057F838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BF50722A4D94D90057F838 /* Assets.xcassets */; };
 		A4BF50762A4D94D90057F838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BF50752A4D94D90057F838 /* Preview Assets.xcassets */; };
 		A4BF507E2A4D97B30057F838 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF507D2A4D97B30057F838 /* Card.swift */; };
 		A4BF50802A4D99C90057F838 /* BoardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF507F2A4D99C90057F838 /* BoardList.swift */; };
 		A4BF50822A4D9B6A0057F838 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50812A4D9B6A0057F838 /* Board.swift */; };
 		A4BF50852A4DB7AE0057F838 /* Board+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */; };
+		A4BF50882A4DF23F0057F838 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF50872A4DF23F0057F838 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4BF506B2A4D94D80057F838 /* TrelloClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrelloClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF506E2A4D94D80057F838 /* TrelloCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloCloneApp.swift; sourceTree = "<group>"; };
-		A4BF50702A4D94D80057F838 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A4BF50722A4D94D90057F838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4BF50752A4D94D90057F838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4BF507D2A4D97B30057F838 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		A4BF50812A4D9B6A0057F838 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		A4BF50832A4DB6F40057F838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+Stub.swift"; sourceTree = "<group>"; };
+		A4BF50872A4DF23F0057F838 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 		A4BF506D2A4D94D80057F838 /* TrelloClone */ = {
 			isa = PBXGroup;
 			children = (
+				A4BF50862A4DF2230057F838 /* Views */,
 				A4BF50832A4DB6F40057F838 /* Info.plist */,
 				A4BF507C2A4D97A20057F838 /* Models */,
 				A4BF506E2A4D94D80057F838 /* TrelloCloneApp.swift */,
-				A4BF50702A4D94D80057F838 /* ContentView.swift */,
 				A4BF50722A4D94D90057F838 /* Assets.xcassets */,
 				A4BF50742A4D94D90057F838 /* Preview Content */,
 			);
@@ -87,6 +87,14 @@
 				A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A4BF50862A4DF2230057F838 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4BF50872A4DF23F0057F838 /* BoardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BF50882A4DF23F0057F838 /* BoardView.swift in Sources */,
 				A4BF50852A4DB7AE0057F838 /* Board+Stub.swift in Sources */,
-				A4BF50712A4D94D80057F838 /* ContentView.swift in Sources */,
 				A4BF507E2A4D97B30057F838 /* Card.swift in Sources */,
 				A4BF50822A4D9B6A0057F838 /* Board.swift in Sources */,
 				A4BF50802A4D99C90057F838 /* BoardList.swift in Sources */,
