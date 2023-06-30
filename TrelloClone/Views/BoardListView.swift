@@ -68,6 +68,7 @@ struct BoardListView: View {
                         NSItemProvider(object: card)
                     }
             }
+            .onInsert(of: [Card.typeIdentifier], perform: handleOnInsertCard)
             .onMove(perform: boardList
                 .moveCards(fromOffsets:toOffset:))
             .listRowSeparator(.hidden)
@@ -78,6 +79,16 @@ struct BoardListView: View {
         }
     }
 
+    private func handleOnInsertCard(index: Int, itemProviders: [NSItemProvider]) {
+        for itemProvider in itemProviders {
+            itemProvider.loadObject(ofClass: Card.self) { item, _ in
+                guard let card = item as? Card else { return }
+                DispatchQueue.main.async {
+                    board.move(card: card, to: boardList, at: index)
+                }
+            }
+        }
+    }
 
     private func handlerAddCard() {
         presentAlertTextField(title: "Add card to \(boardList.name)") { text in

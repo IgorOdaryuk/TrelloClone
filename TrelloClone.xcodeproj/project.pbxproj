@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A46491782A4EC10E00270D3A /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = A46491772A4EC10E00270D3A /* Introspect */; };
 		A464917A2A4EC65D00270D3A /* View+AlertTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46491792A4EC65D00270D3A /* View+AlertTextField.swift */; };
+		A464917C2A4EE36E00270D3A /* BoardDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A464917B2A4EE36E00270D3A /* BoardDropDelegate.swift */; };
 		A4BF506F2A4D94D80057F838 /* TrelloCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BF506E2A4D94D80057F838 /* TrelloCloneApp.swift */; };
 		A4BF50732A4D94D90057F838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BF50722A4D94D90057F838 /* Assets.xcassets */; };
 		A4BF50762A4D94D90057F838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BF50752A4D94D90057F838 /* Preview Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A46491792A4EC65D00270D3A /* View+AlertTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AlertTextField.swift"; sourceTree = "<group>"; };
+		A464917B2A4EE36E00270D3A /* BoardDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDropDelegate.swift; sourceTree = "<group>"; };
 		A4BF506B2A4D94D80057F838 /* TrelloClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrelloClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BF506E2A4D94D80057F838 /* TrelloCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloCloneApp.swift; sourceTree = "<group>"; };
 		A4BF50722A4D94D90057F838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A4BF507F2A4D99C90057F838 /* BoardList.swift */,
 				A4BF50812A4D9B6A0057F838 /* Board.swift */,
 				A4BF50842A4DB7AE0057F838 /* Board+Stub.swift */,
+				A464917B2A4EE36E00270D3A /* BoardDropDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A464917C2A4EE36E00270D3A /* BoardDropDelegate.swift in Sources */,
 				A4BF50882A4DF23F0057F838 /* BoardView.swift in Sources */,
 				A4BF50852A4DB7AE0057F838 /* Board+Stub.swift in Sources */,
 				A4BF507E2A4D97B30057F838 /* Card.swift in Sources */,
