@@ -64,16 +64,21 @@ struct BoardListView: View {
         List {
             ForEach(boardList.cards) { card in
                 CardView(boardList: boardList, card: card)
+                    .onDrag {
+                        NSItemProvider(object: card)
+                    }
             }
+            .onMove(perform: boardList
+                .moveCards(fromOffsets:toOffset:))
             .listRowSeparator(.hidden)
-            .listRowInsets(.init(top: 4, leading: 8,
-                                bottom: 4, trailing: 8))
+            .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
             .listRowBackground(Color.clear)
             .introspectTableView { listHeight = $0.contentSize.height
             }
         }
     }
-    
+
+
     private func handlerAddCard() {
         presentAlertTextField(title: "Add card to \(boardList.name)") { text in
             guard let text = text, !text.isEmpty else {
