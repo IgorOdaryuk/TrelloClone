@@ -18,7 +18,8 @@ struct CardView: View {
             Spacer()
             Menu {
                 Button("Edit") { handleEditCard() }
-                Button("Delete", role: .destructive) { boardList.removeCard(card)
+                Button("Delete", role: .destructive) {
+                    boardList.removeCard(card)
                 }
             } label: {
                 Image(systemName: "ellipsis.rectangle")
@@ -33,8 +34,7 @@ struct CardView: View {
     }
     
     private func handleEditCard() {
-        presentAlertTextField(title: "Edit Card", defaultTextFieldText: card.content) {
-            text in
+        presentAlertTextField(title: "Edit Card", defaultTextFieldText: card.content) { text in
             guard let text = text, !text.isEmpty else {
                 return
             }
@@ -48,17 +48,11 @@ struct CardView_Previews: PreviewProvider {
     @StateObject static var boardList = Board.stub.lists[0]
     
     static var previews: some View {
-        CardView(boardList: boardList, card:
-                    boardList.cards[0])
-        .previewLayout(.sizeThatFits)
-        .frame(width: 300)
+        CardView(boardList: boardList, card: boardList.cards[0])
+            .previewLayout(.sizeThatFits)
+            .frame(width: 300)
     }
 }
-
-
-
-
-
 
 
 

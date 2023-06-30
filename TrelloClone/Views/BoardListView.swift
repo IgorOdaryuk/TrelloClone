@@ -23,7 +23,7 @@ struct BoardListView: View {
                 .frame(maxHeight: listHeight)
             
             Button("+ Add card") {
-                
+                handleAddCard()
             }
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .center)
@@ -45,11 +45,11 @@ struct BoardListView: View {
             
             Menu {
                 Button("Rename") {
-                    
+                    handleBoardListRename()
                 }
                 
                 Button("Delete", role: .destructive) {
-                    
+                    board.removeBoardList(boardList)
                 }
                 
             } label: {
@@ -69,8 +69,7 @@ struct BoardListView: View {
                     }
             }
             .onInsert(of: [Card.typeIdentifier], perform: handleOnInsertCard)
-            .onMove(perform: boardList
-                .moveCards(fromOffsets:toOffset:))
+            .onMove(perform: boardList.moveCards(fromOffsets:toOffset:))
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
             .listRowBackground(Color.clear)
@@ -78,7 +77,7 @@ struct BoardListView: View {
             }
         }
     }
-
+    
     private func handleOnInsertCard(index: Int, itemProviders: [NSItemProvider]) {
         for itemProvider in itemProviders {
             itemProvider.loadObject(ofClass: Card.self) { item, _ in
@@ -88,9 +87,19 @@ struct BoardListView: View {
                 }
             }
         }
+        
     }
-
-    private func handlerAddCard() {
+    
+    private func handleBoardListRename() {
+        presentAlertTextField(title: "Rename list", defaultTextFieldText: boardList.name) { text in
+            guard let text = text, !text.isEmpty else {
+                return
+            }
+            boardList.name = text
+        }
+    }
+    
+    private func handleAddCard() {
         presentAlertTextField(title: "Add card to \(boardList.name)") { text in
             guard let text = text, !text.isEmpty else {
                 return
@@ -98,6 +107,7 @@ struct BoardListView: View {
             boardList.addNewCardWithContent(text)
         }
     }
+    
 }
 
 struct BoardListView_Previews: PreviewProvider {
@@ -110,11 +120,3 @@ struct BoardListView_Previews: PreviewProvider {
             .frame(width: 300, height: 512)
     }
 }
-
-
-
-
-
-
-
-

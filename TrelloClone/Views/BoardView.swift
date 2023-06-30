@@ -12,19 +12,24 @@ let trelloBlueBackgroundColor = Color(uiColor: UIColor(red: 0.2, green: 0.47, bl
 
 struct BoardView: View {
     
-    @StateObject private var board: Board = Board.stub
+    @StateObject private var board: Board = BoardDiskRepository().loadFromDisk() ?? Board.stub
+    @State private var dragging: BoardList?
     
     var body: some View {
         NavigationView {
             ScrollView(.horizontal) {
                 LazyHStack(alignment: .top, spacing: 24) {
                     ForEach(board.lists) { boardList in BoardListView(board: board, boardList: boardList)
-                            .onDrop(of: [Card.typeIdentifier], delegate:
-                            BoardDropDelegate(board: board, boardList: boardList))
+                            .onDrag({
+                                self.dragging = boardList
+                                return NSItemProvider(object: boardList)
+                            })
+                            .onDrop(of: [Card.typeIdentifier, BoardList.typeIdentifier], delegate:
+                                        BoardDropDelegate(board: board, boardList: boardList, lists: $board.lists, current: $dragging))
                     }
                     
                     Button("+ Add list") {
-                        
+                        handleOnAddList()
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -34,15 +39,39 @@ struct BoardView: View {
                     .foregroundColor(.black)
                 }
                 .padding()
+                .animation(.default, value: board.lists)
             }
             .background(Image("Image")
                 .resizable())
             .edgesIgnoringSafeArea(.bottom)
             .navigationTitle(board.name)
             .navigationBarTitleDisplayMode(.inline)
-            //.background(trelloBlueBackgroundColor)
+            .toolbar {
+                Button("Rename") {
+                    handleRenameBoard()
+                }
+            }
         }
         .navigationViewStyle(.stack)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in BoardDiskRepository().saveToDisk(board: board)
+        }
+    }
+    
+    private func handleOnAddList() {
+        presentAlertTextField(title: "Add list") { text in guard let text = text, !text.isEmpty else {
+            return
+        }
+            board.addNewBoardListWithName(text)
+        }
+    }
+    
+    private func handleRenameBoard() {
+        presentAlertTextField(title: "Rename Board", defaultTextFieldText: board.name) { text in
+            guard let text = text, !text.isEmpty else {
+                return
+            }
+            board.name = text
+        }
     }
 }
 
@@ -51,4 +80,5 @@ struct BoardView_Previews: PreviewProvider {
         BoardView()
             .previewInterfaceOrientation(.landscapeLeft)
     }
+    
 }
