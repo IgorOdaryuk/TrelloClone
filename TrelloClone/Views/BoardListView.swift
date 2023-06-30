@@ -73,6 +73,15 @@ struct BoardListView: View {
             }
         }
     }
+    
+    private func handlerAddCard() {
+        presentAlertTextField(title: "Add card to \(boardList.name)") { text in
+            guard let text = text, !text.isEmpty else {
+                return
+            }
+            boardList.addNewCardWithContent(text)
+        }
+    }
 }
 
 struct BoardListView_Previews: PreviewProvider {
